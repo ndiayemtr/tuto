@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    
+     <p>Page utilisateurs</p>
+    
+    <p>Vous etes un :
+        
+        {% if is_granted('ROLE_ADMIN') %}
+            <b>administrateur</b>
+        {% endif %}
+        
+        {% if is_granted('ROLE_USER') %}
+            <b>client</b>
+        {% endif %}
+        
+     </p>
+    <p><a href="{{path('fos_user_security_logout') }}"> Se déconnecter</a></p>
+    
+    
+{% endblock %}
